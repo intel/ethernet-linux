@@ -11,13 +11,13 @@ jobs:
 
         steps:
             - name: Checkout main branch
-                uses: actions/checkout@v4
+              uses: actions/checkout@v4
 
             - name: Build
-                run: make
+              run: make
 
             - name: Deploy to gh-pages
-                uses: peaceiris/actions-gh-pages@v3
-                with:
+              uses: peaceiris/actions-gh-pages@v3
+              with:
                     github_token: ${{ secrets.GITHUB_TOKEN }}
                     publish_dir: ./output
