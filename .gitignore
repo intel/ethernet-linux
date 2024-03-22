@@ -1,0 +1,7 @@
+# ignore the build output directory
+output/
+
+# ignore temporary files
+*~
+*.bak
+
