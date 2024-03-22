@@ -1,3 +1,5 @@
+[![pages-build-deployment](https://github.com/intel/ethernet-linux/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/intel/ethernet-linux/actions/workflows/pages/pages-build-deployment)
+
 Ethernet Linux HTML
 ===================
 
