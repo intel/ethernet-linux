@@ -21,7 +21,7 @@ jobs:
     deploy:
       runs-on: ubuntu-latest
       permissions:
-        pages: write
+        contents: write
       steps:
         - name: Deploy to gh-pages
           uses: peaceiris/actions-gh-pages@v4
