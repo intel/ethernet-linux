@@ -12,17 +12,12 @@ jobs:
     build:
       runs-on: ubuntu-latest
       permissions:
-        contents: read
-      steps:
-          - name: Checkout main branch
-            uses: actions/checkout@v4
-          - name: Build
-            run: make
-    deploy:
-      runs-on: ubuntu-latest
-      permissions:
         contents: write
       steps:
+        - name: Checkout main branch
+          uses: actions/checkout@v4
+        - name: Build
+          run: make
         - name: Deploy to gh-pages
           uses: peaceiris/actions-gh-pages@v4
           with:
