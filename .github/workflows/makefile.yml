@@ -5,23 +5,26 @@ on:
         branches:
             - main
 
-permissions:
-  contents: write
-  pages: write
+#Disable all permissions on global scope, each permission will be assigned at the job level scope
+permissions: {}
 
 jobs:
     build:
-        runs-on: ubuntu-latest
-
-        steps:
-            - name: Checkout main branch
-              uses: actions/checkout@v4
-
-            - name: Build
-              run: make
-
-            - name: Deploy to gh-pages
-              uses: peaceiris/actions-gh-pages@v3
-              with:
-                    github_token: ${{ secrets.GITHUB_TOKEN }}
-                    publish_dir: ./output
+      runs-on: ubuntu-latest
+      permissions:
+        contents: read
+      steps:
+          - name: Checkout main branch
+            uses: actions/checkout@v4
+          - name: Build
+            run: make
+    deploy:
+      runs-on: ubuntu-latest
+      permissions:
+        pages: write
+      steps:
+        - name: Deploy to gh-pages
+          uses: peaceiris/actions-gh-pages@v4
+          with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                publish_dir: ./output
